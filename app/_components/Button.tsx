@@ -22,14 +22,7 @@ export const Button = ({
   href,
 }: ButtonProps) => {
   return (
-    <Button001
-      type={type}
-      size={size}
-      disabled={disabled}
-      as={as}
-      href={href}
-      onClick={onClick}
-    >
+    <Button001 type={type} size={size} disabled={disabled} as={as} href={href} onClick={onClick}>
       {children}
     </Button001>
   );
