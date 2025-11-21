@@ -5,6 +5,7 @@
   "timezone": "Asia/Tokyo",
   "prConcurrentLimit": 1,
   "platformAutomerge": true,
+  "ignoreDeps": ["arcfe"],
   "packageRules": [
     {
       "matchDepTypes": ["packageManager", "engines"],
@@ -34,11 +35,6 @@
       "matchPackageNames": ["pnpm"],
       "matchManagers": ["npm"],
       "matchDepTypes": ["engines"],
-      "enabled": false
-    },
-    {
-      "description": "Ignore ArcFE private repository",
-      "matchPackageNames": ["arcfe"],
       "enabled": false
     }
   ]
