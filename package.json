@@ -32,6 +32,6 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/styled-components": "^5.1.36",
-    "typescript": "^5"
+    "typescript": "^5.9.3"
   }
 }
