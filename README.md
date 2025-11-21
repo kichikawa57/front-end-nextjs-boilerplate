@@ -57,23 +57,23 @@ pnpm lint:fix
 
 ## Directory Structure
 
-This project follows a page-based directory structure to organize components and sections by page.
+This project follows a feature-based directory structure to organize components and sections.
 
 ```
 app/
-├── (pages)/                  # Pages directory (grouped route)
-│   └── home/                 # Home page
-│       ├── _components/      # Home page specific components
+├── (pages)/                  # Feature-based components and sections (not routes)
+│   └── home/                 # Home feature
+│       ├── _components/      # Home-specific components
 │       │   └── HeroSection.tsx
-│       ├── _sections/        # Home page sections (large component blocks)
-│       │   └── MainSection.tsx
-│       └── page.tsx          # Home page entry point
-├── _components/              # Shared components (used across multiple pages)
+│       └── _sections/        # Home sections (large component blocks)
+│           └── MainSection.tsx
+├── _components/              # Shared components (used across multiple features)
 │   ├── Button.tsx
 │   └── Header.tsx
 ├── _layout/                  # Layout components
 │   └── Layout.tsx
-└── layout.tsx                # Root layout
+├── layout.tsx                # Root layout
+└── page.tsx                  # Root page (/)
 
 styles/                       # Global styles and theme
 └── color.ts                  # Theme color definitions
@@ -86,23 +86,23 @@ public/                       # Static assets
 
 ### Directory Structure Conventions
 
-#### 1. Pages: `app/(pages)/[page-name]/`
+#### 1. Pages: `app/page.tsx`, `app/about/page.tsx`, etc.
 
-Each page should have its own directory under `app/(pages)/`. The directory name should match the route.
+Actual pages are placed directly under `app/` or in route directories.
 
 Example:
-- `app/(pages)/home/` → Route: `/home`
-- `app/(pages)/about/` → Route: `/about`
-- `app/(pages)/products/` → Route: `/products`
+- `app/page.tsx` → Route: `/`
+- `app/about/page.tsx` → Route: `/about`
+- `app/products/page.tsx` → Route: `/products`
 
-#### 2. Page-specific Components: `app/(pages)/[page-name]/_components/`
+#### 2. Feature Components: `app/(pages)/[feature-name]/_components/`
 
-Components that are **only used within a specific page** should be placed in the page's `_components/` directory.
+Components that are **specific to a feature** should be placed in `app/(pages)/[feature-name]/_components/`.
 
 **Guidelines:**
-- Small, reusable UI elements specific to the page
-- Examples: Hero sections, feature cards, page-specific forms
-- These components should NOT be imported by other pages
+- Small, reusable UI elements specific to the feature
+- Examples: Hero sections, feature cards, feature-specific forms
+- These components can be imported by pages but are organized by feature
 
 **Example:**
 ```tsx
@@ -110,11 +110,14 @@ Components that are **only used within a specific page** should be placed in the
 export const HeroSection = () => {
   return <section>...</section>;
 };
+
+// Usage in app/page.tsx
+import { HeroSection } from "@/app/(pages)/home/_components/HeroSection";
 ```
 
-#### 3. Page Sections: `app/(pages)/[page-name]/_sections/`
+#### 3. Feature Sections: `app/(pages)/[feature-name]/_sections/`
 
-Large component blocks that combine multiple components should be placed in the page's `_sections/` directory.
+Large component blocks that combine multiple components should be placed in the feature's `_sections/` directory.
 
 **Guidelines:**
 - Sections are larger than components and often compose multiple components
@@ -134,16 +137,19 @@ export const MainSection = () => {
     </section>
   );
 };
+
+// Usage in app/page.tsx
+import { MainSection } from "@/app/(pages)/home/_sections/MainSection";
 ```
 
 #### 4. Shared Components: `app/_components/`
 
-Components that are **used across multiple pages** should be placed in the `app/_components/` directory.
+Components that are **used across multiple features** should be placed in the `app/_components/` directory.
 
 **Guidelines:**
 - Generic, reusable UI elements
 - Examples: Button, Input, Modal, Header, Footer
-- These components should be agnostic to any specific page
+- These components should be agnostic to any specific feature
 
 **Example:**
 ```tsx
@@ -172,7 +178,7 @@ export const Layout = ({ children }) => {
 ```
 ┌─────────────────────────────────────┐
 │ Is this component used by           │
-│ multiple pages?                     │
+│ multiple features?                  │
 └─────────────┬───────────────────────┘
               │
       ┌───────┴───────┐
@@ -187,10 +193,10 @@ export const Layout = ({ children }) => {
                        ┌───────┴───────┐
                        │ YES           │ NO
                        ▼               ▼
-                ┌──────────────┐  ┌──────────────┐
-                │ Place in     │  │ Place in     │
-                │ _sections/   │  │ _components/ │
-                └──────────────┘  └──────────────┘
+          ┌──────────────────────┐  ┌──────────────────────┐
+          │ app/(pages)/         │  │ app/(pages)/         │
+          │ [feature]/_sections/ │  │ [feature]/_components/│
+          └──────────────────────┘  └──────────────────────┘
 ```
 
 ### Styling Guidelines
