@@ -1,0 +1,41 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
+  "rangeStrategy": "bump",
+  "enabledManagers": ["npm"],
+  "timezone": "Asia/Tokyo",
+  "prConcurrentLimit": 1,
+  "platformAutomerge": true,
+  "packageRules": [
+    {
+      "matchDepTypes": ["packageManager", "engines"],
+      "enabled": false
+    },
+    {
+      "matchPackageNames": ["pnpm"],
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["engines"],
+      "enabled": false
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "matchPackagePatterns": ["^storybook$", "^@storybook/", "^storybook-"],
+      "groupName": "Storybook related packages",
+      "enabled": false
+    },
+    {
+      "description": "Ignore engines.pnpm",
+      "matchPackageNames": ["pnpm"],
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["engines"],
+      "enabled": false
+    }
+  ]
+}
