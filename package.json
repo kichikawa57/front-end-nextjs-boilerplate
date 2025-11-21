@@ -18,7 +18,6 @@
     "@react-aria/textfield": "^3.18.2",
     "@react-aria/utils": "^3.31.0",
     "@react-stately/select": "^3.8.0",
-    "arcfe": "git+ssh://git@github.com/kichikawa57/ArcFE.git#v2.2.0",
     "gsap": "^3.13.0",
     "keen-slider": "^6.8.6",
     "next": "16.0.3",
