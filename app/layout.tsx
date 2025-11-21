@@ -17,8 +17,7 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   title: "Frontend Next.js Boilerplate",
-  description:
-    "A modern Next.js boilerplate with TypeScript, styled-components, and Biome",
+  description: "A modern Next.js boilerplate with TypeScript, styled-components, and Biome",
 };
 
 export default function RootLayout({
