@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
-  "rangeStrategy": "bump",
+  "rangeStrategy": "replace",
   "timezone": "Asia/Tokyo",
   "prConcurrentLimit": 1,
   "platformAutomerge": true,
