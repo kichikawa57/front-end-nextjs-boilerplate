@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Lato, Zen_Kaku_Gothic_New } from "next/font/google";
 import "./globals.css";
+import StyledComponentsRegistry from "@/lib/registry";
+import { Layout } from "./_layout/Layout";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const zenKakuGothicAntique = Zen_Kaku_Gothic_New({
   subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const lato = Lato({
   subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -24,8 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body className={`${zenKakuGothicAntique.className} ${lato.className}`}>
+        <StyledComponentsRegistry>
+          <Layout>{children}</Layout>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
