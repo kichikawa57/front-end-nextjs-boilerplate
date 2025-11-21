@@ -1,33 +1,36 @@
 "use client";
 
-import styled, { css } from "styled-components";
+import { Button001 } from "arcfe/packages/ui";
 
 type ButtonProps = {
   children: React.ReactNode;
   onClick?: () => void;
+  type?: "001" | "002" | "003";
+  size?: "small" | "middle" | "large";
+  disabled?: boolean;
+  as?: "button" | "a" | "span";
+  href?: string;
 };
 
-const StyledButton = styled.button`
-  padding: ${({ theme }) => `${theme.size.rem(12)} ${theme.size.rem(24)}`};
-  font-size: ${({ theme }) => theme.size.rem(16)};
-  border: none;
-  border-radius: ${({ theme }) => theme.size.rem(4)};
-  background-color: #000000;
-  color: #ffffff;
-  cursor: pointer;
-  transition: opacity 0.2s;
-
-  &:hover {
-    opacity: 0.8;
-  }
-
-  ${({ theme }) =>
-    theme.media.spSizeLess(css`
-      font-size: ${theme.size.rem(14)};
-      padding: ${`${theme.size.rem(10)} ${theme.size.rem(20)}`};
-    `)}
-`;
-
-export const Button = ({ children, onClick }: ButtonProps) => {
-  return <StyledButton onClick={onClick}>{children}</StyledButton>;
+export const Button = ({
+  children,
+  onClick,
+  type = "001",
+  size = "middle",
+  disabled = false,
+  as = "button",
+  href,
+}: ButtonProps) => {
+  return (
+    <Button001
+      type={type}
+      size={size}
+      disabled={disabled}
+      as={as}
+      href={href}
+      onClick={onClick}
+    >
+      {children}
+    </Button001>
+  );
 };
