@@ -55,7 +55,7 @@ importers:
         specifier: 2.3.7
         version: 2.3.7
       '@types/node':
-        specifier: ^20
+        specifier: ^20.19.25
         version: 20.19.25
       '@types/react':
         specifier: ^19
