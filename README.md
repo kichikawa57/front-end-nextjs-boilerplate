@@ -21,6 +21,42 @@ A modern Next.js boilerplate with TypeScript, styled-components, Biome, and ArcF
 
 ### Installation
 
+#### 1. Add ArcFE Dependency
+
+First, add the ArcFE package to your `package.json` dependencies:
+
+```json
+{
+  "dependencies": {
+    "arcfe": "git+ssh://git@github.com/kichikawa57/ArcFE.git#v2.2.0"
+  }
+}
+```
+
+Replace `v2.2.0` with the latest version tag from the [ArcFE repository](https://github.com/kichikawa57/ArcFE).
+
+**Example with other dependencies:**
+```json
+{
+  "name": "my-next-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build"
+  },
+  "dependencies": {
+    "arcfe": "git+ssh://git@github.com/kichikawa57/ArcFE.git#v2.2.0",
+    "next": "16.0.3",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "styled-components": "6.1.19"
+  }
+}
+```
+
+#### 2. Install Dependencies
+
 ```bash
 pnpm install
 ```
