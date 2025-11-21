@@ -36,6 +36,11 @@
       "matchManagers": ["npm"],
       "matchDepTypes": ["engines"],
       "enabled": false
+    },
+    {
+      "description": "Ignore ArcFE private repository",
+      "matchPackageNames": ["arcfe"],
+      "enabled": false
     }
   ]
 }
