@@ -30,18 +30,8 @@ jobs:
           node-version: "22"
           cache: "pnpm"
 
-      - name: Configure Git for private repos and install dependencies
-        env:
-          GIT_CONFIG_COUNT: "2"
-          GIT_CONFIG_KEY_0: "url.https://x-access-token:${{ secrets.GH_PRIVATE_REPO_TOKEN }}@github.com/.insteadOf"
-          GIT_CONFIG_VALUE_0: "git@github.com:"
-          GIT_CONFIG_KEY_1: "url.https://x-access-token:${{ secrets.GH_PRIVATE_REPO_TOKEN }}@github.com/.insteadOf"
-          GIT_CONFIG_VALUE_1: "https://github.com/"
-        run: |
-          git config --global url."https://x-access-token:${{ secrets.GH_PRIVATE_REPO_TOKEN }}@github.com/".insteadOf "git@github.com:"
-          git config --global url."https://x-access-token:${{ secrets.GH_PRIVATE_REPO_TOKEN }}@github.com/".insteadOf "https://github.com/"
-          git config --global --list | grep url
-          pnpm install --frozen-lockfile
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
       - name: Run TypeScript type check
         run: pnpm type-check

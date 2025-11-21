@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Lato, Zen_Kaku_Gothic_New } from "next/font/google";
-import "./globals.css";
 import StyledComponentsRegistry from "@/lib/registry";
 import { Layout } from "./_layout/Layout";
 
@@ -18,7 +17,8 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   title: "Frontend Next.js Boilerplate",
-  description: "A modern Next.js boilerplate with TypeScript, styled-components, and Biome",
+  description:
+    "A modern Next.js boilerplate with TypeScript, styled-components, and Biome",
 };
 
 export default function RootLayout({
