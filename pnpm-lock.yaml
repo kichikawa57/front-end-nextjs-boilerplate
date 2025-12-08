@@ -30,8 +30,8 @@ importers:
         specifier: ^3.8.0
         version: 3.8.0(react@19.2.1)
       gsap:
-        specifier: ^3.13.0
-        version: 3.13.0
+        specifier: ^3.14.1
+        version: 3.14.1
       keen-slider:
         specifier: ^6.8.6
         version: 6.8.6
@@ -602,8 +602,8 @@ packages:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
     engines: {node: '>=8'}
 
-  gsap@3.13.0:
-    resolution: {integrity: sha512-QL7MJ2WMjm1PHWsoFrAQH/J8wUeqZvMtHO58qdekHpCfhvhSL4gSiz6vJf5EeMP0LOn3ZCprL2ki/gjED8ghVw==}
+  gsap@3.14.1:
+    resolution: {integrity: sha512-nOFRJpVu+U0IPgKzfC5MEdZrJ1iVidGaOuxK0+Un+7vMOHa5rw/SKOaMaRRyHZiJKaeAEALTBwnj6R3gifyGBw==}
 
   hoist-non-react-statics@3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
@@ -1313,7 +1313,7 @@ snapshots:
   detect-libc@2.1.2:
     optional: true
 
-  gsap@3.13.0: {}
+  gsap@3.14.1: {}
 
   hoist-non-react-statics@3.3.2:
     dependencies:
