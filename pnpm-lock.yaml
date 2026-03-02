@@ -55,8 +55,8 @@ importers:
         specifier: 2.4.5
         version: 2.4.5
       '@types/node':
-        specifier: ^24.10.12
-        version: 24.10.12
+        specifier: ^24.11.0
+        version: 24.11.0
       '@types/react':
         specifier: ^19.2.14
         version: 19.2.14
@@ -576,8 +576,8 @@ packages:
     peerDependencies:
       '@types/react': '*'
 
-  '@types/node@24.10.12':
-    resolution: {integrity: sha512-68e+T28EbdmLSTkPgs3+UacC6rzmqrcWFPQs1C8mwJhI/r5Uxr0yEuQotczNRROd1gq30NGxee+fo0rSIxpyAw==}
+  '@types/node@24.11.0':
+    resolution: {integrity: sha512-fPxQqz4VTgPI/IQ+lj9r0h+fDR66bzoeMGHp8ASee+32OSGIkeASsoZuJixsQoVef1QJbeubcPBxKk22QVoWdw==}
 
   '@types/react-dom@19.2.3':
     resolution: {integrity: sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ==}
@@ -1293,7 +1293,7 @@ snapshots:
       '@types/react': 19.2.14
       hoist-non-react-statics: 3.3.2
 
-  '@types/node@24.10.12':
+  '@types/node@24.11.0':
     dependencies:
       undici-types: 7.16.0
 
