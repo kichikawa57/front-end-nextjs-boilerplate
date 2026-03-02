@@ -24,7 +24,7 @@
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "styled-components": "^6.3.11",
-    "swiper": "^12.1.0"
+    "swiper": "^12.1.2"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.14",
